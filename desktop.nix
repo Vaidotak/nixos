@@ -16,6 +16,9 @@
     xkb.variant = "";
   };
 
+   # Configure console keymap
+  console.keyMap = "lt.baltic";
+
   services.xserver.desktopManager.plasma5.enable = true;
   services.displayManager.sddm.enable = false;
 
