@@ -38,6 +38,8 @@
     autokey
     systemctl-tui
     keepassxc
+    protonvpn-cli_2
+    protonvpn-gui
   ];
 
   nixpkgs.config.allowUnfree = true;
