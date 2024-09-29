@@ -40,6 +40,10 @@
     keepassxc
     protonvpn-cli_2
     protonvpn-gui
+    python3
+    python3Packages.pygobject3
+    glib
+    gobject-introspection
   ];
 
   nixpkgs.config.allowUnfree = true;
