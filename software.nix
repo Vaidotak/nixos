@@ -44,6 +44,12 @@
     python3Packages.pygobject3
     glib
     gobject-introspection
+    kdePackages.kcron
+    nullmailer
+    zoxide
+    cryptsetup
+    parted
+    bc
   ];
 
   nixpkgs.config.allowUnfree = true;
