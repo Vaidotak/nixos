@@ -50,6 +50,7 @@
     cryptsetup
     parted
     bc
+    kitty
   ];
 
   nixpkgs.config.allowUnfree = true;
