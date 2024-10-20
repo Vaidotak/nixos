@@ -11,20 +11,33 @@
     ./updates.nix
   ];
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # Boot loader configuration
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+    grub = {
+      extraConfig = ''
+        set gfxpayload=keep
+      '';
+      configurationLimit = 3;
+    };
+  };
 
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
+  # Hardware configuration
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+
   services.blueman.enable = true;
 
-  # Set your time zone.
+  # Time and localization settings
   time.timeZone = "Europe/Vilnius";
-
-  # Select internationalisation properties.
   i18n.defaultLocale = "lt_LT.UTF-8";
 
+  # Security settings
   security.rtkit.enable = true;
 
+  # System state version
   system.stateVersion = "24.05";
 }

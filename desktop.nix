@@ -1,27 +1,20 @@
 { config, pkgs, ... }:
 
 {
-  services.xserver.enable = true;
-
-  services.xserver.displayManager.sessionCommands = ''
-    xrandr --output HDMI-1 --off
-  '';
-
-  boot.loader.grub.extraConfig = ''
-    set gfxpayload=keep
-  '';
-
-  boot.loader.grub.configurationLimit = 3;
-
+    
   services.xserver = {
+    enable = true;
     xkb.layout = "lt";
     xkb.variant = "";
+    desktopManager.plasma5.enable = true;
+    displayManager.sessionCommands = ''
+      xrandr --output HDMI-1 --off
+    '';
   };
 
-   # Configure console keymap
+  # Configure console keymap
   console.keyMap = "lt.baltic";
 
-  services.xserver.desktopManager.plasma5.enable = true;
   services.displayManager.sddm.enable = false;
 
   fonts.packages = with pkgs; [
