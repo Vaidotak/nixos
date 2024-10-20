@@ -11,6 +11,8 @@
     set gfxpayload=keep
   '';
 
+  boot.loader.grub.configurationLimit = 3;
+
   services.xserver = {
     xkb.layout = "lt";
     xkb.variant = "";
