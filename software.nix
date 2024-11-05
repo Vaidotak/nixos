@@ -10,7 +10,7 @@
     obsidian
     fastfetch
     clamav
-    qbittorrent
+    transmission-qt
     stacer
     chromium
     vscode
@@ -51,6 +51,10 @@
     parted
     bc
     kitty
+    ntfs3g
+    exfat
+    exfatprogs
+    gparted
   ];
 
   nixpkgs.config.allowUnfree = true;
