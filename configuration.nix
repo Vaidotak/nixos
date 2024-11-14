@@ -9,6 +9,7 @@
     ./software.nix
     ./hardware.nix
     ./updates.nix
+    ./services.nix
   ];
 
   # Boot loader configuration
