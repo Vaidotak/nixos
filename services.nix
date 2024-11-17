@@ -2,5 +2,5 @@
 
 {
     services.syncthing.enable = true;
-
+    services.syncthing.user = "vaidotak";
 }
