@@ -10,7 +10,7 @@
     obsidian
     fastfetch
     clamav
-    transmission-qt
+    vuze
     stacer
     chromium
     vscode
