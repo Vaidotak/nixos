@@ -10,7 +10,7 @@
     obsidian
     fastfetch
     clamav
-    vuze
+    kdePackages.ktorrent
     stacer
     chromium
     vscode
@@ -50,7 +50,7 @@
     cryptsetup
     parted
     bc
-    kitty
+    searxng
     ntfs3g
     exfat
     exfatprogs
