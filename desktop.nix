@@ -2,15 +2,19 @@
 
 {
     
-  services.xserver = {
+services = {
+  desktopManager.plasma6.enable = true;
+  xserver = {
     enable = true;
-    xkb.layout = "lt";
-    xkb.variant = "";
-    desktopManager.plasma5.enable = true;
+    xkb = {
+      layout = "lt";
+      variant = "";
+    };
     displayManager.sessionCommands = ''
       xrandr --output HDMI-1 --off
     '';
   };
+};
 
   # Configure console keymap
   console.keyMap = "lt.baltic";
