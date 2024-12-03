@@ -55,7 +55,6 @@
     exfat
     exfatprogs
     gparted
-    kdePackages.ghostwriter
     kdePackages.kdenlive
   ];
 

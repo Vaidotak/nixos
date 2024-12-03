@@ -11,4 +11,7 @@
   services.searx.settings.server.secret_key = "slaptas_raktas";
   services.searx.settings.server.port = 8080;
   services.searx.settings.search.formats = ["html" "json" "rss"];
+
+  # services.openssh.enable = true;
+
 }
