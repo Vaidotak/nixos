@@ -55,6 +55,8 @@
     exfat
     exfatprogs
     gparted
+    kdePackages.ghostwriter
+    kdePackages.kdenlive
   ];
 
   nixpkgs.config.allowUnfree = true;
