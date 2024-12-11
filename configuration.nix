@@ -26,17 +26,17 @@
 
   # Kernel parameters
   boot.kernelParams = [
-# "sysrq=1"        # Įgalina Magic SysRq
+    # "sysrq=1"        # Įgalina Magic SysRq
     "kernel.panic=10" # Perkrauna sistemą po 10 sekundžių kernel panic
-    "loglevel=7"      # Išsamūs logai (aukščiausias lygis)
-    "earlyprintk"     # Ankstyvas spausdinimas į konsolę
+    "loglevel=7" # Išsamūs logai (aukščiausias lygis)
+    "earlyprintk" # Ankstyvas spausdinimas į konsolę
     "kernel.panic_on_oops=1" # Perkrauna sistemą, jei įvyksta oops (branduolio klaida)
     "kernel.core_pattern=/var/crash/core.%e.%p" # Nustato crash dump failo išsaugojimo vietą
   ];
 
   boot.kernel.sysctl = {
-  "kernel.sysrq" = 1;
-};
+    "kernel.sysrq" = 1;
+  };
 
   # Hardware configuration
   hardware.bluetooth = {
@@ -49,6 +49,7 @@
   # Time and localization settings
   time.timeZone = "Europe/Vilnius";
   i18n.defaultLocale = "lt_LT.UTF-8";
+  environment.variables.LC_ALL = "lt_LT.UTF-8";
 
   # Security settings
   security.rtkit.enable = true;

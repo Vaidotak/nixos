@@ -24,10 +24,10 @@
   };
 
   services.pipewire.extraConfig.pipewire = {
-  "99-disable-bell" = {
-    "context.properties"= {
+    "99-disable-bell" = {
+      "context.properties" = {
         "module.x11.bell" = false;
+      };
     };
   };
-};
 }
