@@ -4,6 +4,7 @@
   environment.systemPackages = with pkgs; [
 # Interneto naršyklės ir komunikacija
     chromium
+    librewolf # Privatumo orientuota Firefox atšaka
     filezilla # FTP klientas
     ktorrent # BitTorrent klientas
     protonvpn-cli_2 # VPN (komandinė eilutė)
@@ -15,6 +16,7 @@
 
 # Failų valdymas ir archyvavimas
     krusader # Failų tvarkyklė (panaši į Total Commander)
+    krename # Failų pervadinimo įrankis
     mc # Midnight Commander (konsolinė failų tvarkyklė)
     exfatprogs # exFAT failų sistemos įrankiai
     ntfs3g # NTFS failų sistemos įrankiai
@@ -76,6 +78,7 @@
     python3 # Python programavimo kalba
     python3Packages.pygobject3 # Python GObject integracija
     starship # Shell prompt'as
+    rustdesk # Nuotolinio darbo programa
 ];
 
   nixpkgs.config.allowUnfree = true;
