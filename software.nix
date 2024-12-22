@@ -23,7 +23,9 @@
     parted # Disko particionavimo įrankis
     gparted # Grafinis disko particionavimo įrankis
     cryptsetup # Disko šifravimo įrankis
-
+    vsftpd # FTP serveris
+    samba # Failų bendrinimo protokolas
+    
 # Programavimas ir teksto redagavimas
     neovim # Teksto redaktorius (Vim atšaka)
     vim # Teksto redaktorius

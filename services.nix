@@ -13,7 +13,7 @@
   #  services.searx.settings.server.port = 8080;
   #  services.searx.settings.search.formats = [ "html" "json" "rss" ];
 
-  #  services.openssh.enable = true;
+  services.openssh.enable = true;
 
   services.espanso = {
     enable = true;
@@ -48,6 +48,51 @@
   services.prometheus.exporters.node = {
     enable = true;
     port = 9100;
+  };
+
+ # Importuojame kelius iš samba-paths.nix failo
+  services.samba = {
+    enable = true;
+    openFirewall = true;
+    settings = {
+      global = {
+        "workgroup" = "WORKGROUP";
+        "server string" = "smbnix";
+        "netbios name" = "smbnix";
+        "security" = "user";
+        "hosts allow" = "192.168.1. 127.0.0.1 localhost";
+        "hosts deny" = "0.0.0.0/0";
+        "guest account" = "nobody";
+        "map to guest" = "bad user";
+      };
+      
+      # Importuojame kelius tiesiogiai paslaugos konfigūracijoje
+      movies = let
+        sambaPaths = import /etc/nixos/configs/samba-paths.nix;
+      in {
+        "path" = sambaPaths.sambaPaths.moviesPath;
+        "browseable" = "yes";
+        "read only" = "no";
+        "guest ok" = "yes";
+        "create mask" = "0644";
+        "directory mask" = "0755";
+        "force user" = "vaidotak";
+        "force group" = "users";
+      };
+      
+      videos = let
+        sambaPaths = import /etc/nixos/configs/samba-paths.nix;
+      in {
+        "path" = sambaPaths.sambaPaths.videoPath;
+        "browseable" = "yes";
+        "read only" = "no";
+        "guest ok" = "yes";
+        "create mask" = "0644";
+        "directory mask" = "0755";
+        "force user" = "vaidotak";
+        "force group" = "users";
+      };
+    };
   };
 
 
