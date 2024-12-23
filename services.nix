@@ -1,6 +1,70 @@
 { config, pkgs, ... }:
 
 {
+
+  services.samba = {
+    enable = true;
+    openFirewall = true;
+    settings = {
+      global = {
+        "server min protocol" = "SMB2";
+        "server max protocol" = "SMB3";
+        "encrypt passwords" = "yes";
+        #"smb encrypt" = "required";
+        #"workgroup" = "WORKGROUP";
+        "log level" = "2";
+        "log file" = "/home/vaidotak/samba/log.%m";
+        "server string" = "smbnix";
+        "netbios name" = "smbnix";
+        "security" = "user";
+        "hosts allow" = "192.168.1. 127.0.0.1 localhost";
+        "hosts deny" = "0.0.0.0/0";
+        "guest account" = "nobody";
+        "map to guest" = "bad user";
+      };
+
+      # Importuojame kelius tiesiogiai paslaugos konfigūracijoje
+      movies =
+        let
+          sambaPaths = import /etc/nixos/configs/samba-paths.nix;
+        in
+        {
+          "path" = sambaPaths.sambaPaths.moviesPath;
+          "browseable" = "yes";
+          "read only" = "yes";
+          "guest ok" = "yes";
+          "hosts allow" = "192.168.1.206 192.168.1.242"; # Android TV
+          "create mask" = "0644";
+          "directory mask" = "0755";
+          "force user" = "vaidotak";
+          "force group" = "users";
+        };
+
+      videos =
+        let
+          sambaPaths = import /etc/nixos/configs/samba-paths.nix;
+        in
+        {
+          "path" = sambaPaths.sambaPaths.videoPath;
+          "browseable" = "yes";
+          "read only" = "yes";
+          "guest ok" = "yes";
+          "hosts allow" = "192.168.1.206 192.168.1.242"; # Android TV
+          "create mask" = "0644";
+          "directory mask" = "0755";
+          "force user" = "vaidotak";
+          "force group" = "users";
+        };
+    };
+  };
+
+  services.espanso = {
+    enable = true;
+    package = pkgs.espanso;
+  };
+
+  services.flatpak.enable = true;
+
   # Laikinai nereikalingi
 
   #  services.syncthing.enable = true;
@@ -14,11 +78,6 @@
   #  services.searx.settings.search.formats = [ "html" "json" "rss" ];
 
   #  services.openssh.enable = true;
-
-  services.espanso = {
-    enable = true;
-    package = pkgs.espanso;
-  };
 
   # services.prometheus = {
   #   enable = true;
@@ -49,58 +108,5 @@
   #   enable = true;
   #   port = 9100;
   # };
-
-  services.samba = {
-    enable = true;
-    openFirewall = true;
-    settings = {
-      global = {
-        "server min protocol" = "SMB2";
-        "server max protocol" = "SMB3";
-        "encrypt passwords" = "yes";
-        #"smb encrypt" = "required";
-        #"workgroup" = "WORKGROUP";
-        "log level" = "2";
-        "log file" = "/home/vaidotak/samba/log.%m";
-        "server string" = "smbnix";
-        "netbios name" = "smbnix";
-        "security" = "user";
-        "hosts allow" = "192.168.1. 127.0.0.1 localhost";
-        "hosts deny" = "0.0.0.0/0";
-        "guest account" = "nobody";
-        "map to guest" = "bad user";
-      };
-      
-      # Importuojame kelius tiesiogiai paslaugos konfigūracijoje
-      movies = let
-        sambaPaths = import /etc/nixos/configs/samba-paths.nix;
-      in {
-        "path" = sambaPaths.sambaPaths.moviesPath;
-        "browseable" = "yes";
-        "read only" = "yes";
-        "guest ok" = "yes";
-        "hosts allow" = "192.168.1.206 192.168.1.242"; # Android TV
-        "create mask" = "0644";
-        "directory mask" = "0755";
-        "force user" = "vaidotak";
-        "force group" = "users";
-      };
-      
-      videos = let
-        sambaPaths = import /etc/nixos/configs/samba-paths.nix;
-      in {
-        "path" = sambaPaths.sambaPaths.videoPath;
-        "browseable" = "yes";
-        "read only" = "yes";
-        "guest ok" = "yes";
-        "hosts allow" = "192.168.1.206 192.168.1.242"; # Android TV
-        "create mask" = "0644";
-        "directory mask" = "0755";
-        "force user" = "vaidotak";
-        "force group" = "users";
-      };
-    };
-  };
-
 
 }
