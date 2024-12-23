@@ -59,6 +59,7 @@
     kdePackages.kdenlive # Vaizdo įrašų redaktorius
     kdePackages.kleopatra # Sertifikatų valdymas ir kriptografija
     kdePackages.kdialog # Dialogų kūrimas skriptuose
+    caffeine-ng # Ekrano išjungimo valdymas
 
 # Multimedija
     calibre # Elektroninių knygų tvarkyklė
