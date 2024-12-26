@@ -57,6 +57,8 @@
   # Security settings
   security.rtkit.enable = true;
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   # System state version
   system.stateVersion = "24.11";
 }

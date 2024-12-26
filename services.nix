@@ -1,7 +1,10 @@
 { config, pkgs, ... }:
 
+let
+  # Importuojame samba-paths naudojant santykinį kelią
+  sambaPaths = import ./configs/samba-paths.nix;
+in
 {
-
   services.samba = {
     enable = true;
     openFirewall = true;
@@ -23,38 +26,29 @@
         "map to guest" = "bad user";
       };
 
-      # Importuojame kelius tiesiogiai paslaugos konfigūracijoje
-      movies =
-        let
-          sambaPaths = import /etc/nixos/configs/samba-paths.nix;
-        in
-        {
-          "path" = sambaPaths.sambaPaths.moviesPath;
-          "browseable" = "yes";
-          "read only" = "yes";
-          "guest ok" = "yes";
-          "hosts allow" = "192.168.1.206 192.168.1.242"; # Android TV
-          "create mask" = "0644";
-          "directory mask" = "0755";
-          "force user" = "vaidotak";
-          "force group" = "users";
-        };
+      movies = {
+        "path" = sambaPaths.sambaPaths.moviesPath;
+        "browseable" = "yes";
+        "read only" = "yes";
+        "guest ok" = "yes";
+        "hosts allow" = "192.168.1.206 192.168.1.242"; # Android TV
+        "create mask" = "0644";
+        "directory mask" = "0755";
+        "force user" = "vaidotak";
+        "force group" = "users";
+      };
 
-      videos =
-        let
-          sambaPaths = import /etc/nixos/configs/samba-paths.nix;
-        in
-        {
-          "path" = sambaPaths.sambaPaths.videoPath;
-          "browseable" = "yes";
-          "read only" = "yes";
-          "guest ok" = "yes";
-          "hosts allow" = "192.168.1.206 192.168.1.242"; # Android TV
-          "create mask" = "0644";
-          "directory mask" = "0755";
-          "force user" = "vaidotak";
-          "force group" = "users";
-        };
+      videos = {
+        "path" = sambaPaths.sambaPaths.videoPath;
+        "browseable" = "yes";
+        "read only" = "yes";
+        "guest ok" = "yes";
+        "hosts allow" = "192.168.1.206 192.168.1.242"; # Android TV
+        "create mask" = "0644";
+        "directory mask" = "0755";
+        "force user" = "vaidotak";
+        "force group" = "users";
+      };
     };
   };
 
