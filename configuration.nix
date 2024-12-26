@@ -3,13 +3,13 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ./networking.nix
-    ./desktop.nix
-    ./users.nix
-    ./software.nix
-    ./hardware.nix
-    ./updates.nix
-    ./services.nix
+    # ./networking.nix
+    # ./desktop.nix
+    # ./users.nix
+    # ./software.nix
+    # ./hardware.nix
+    # ./updates.nix
+    # ./services.nix
   ];
 
   # Boot loader configuration
@@ -29,8 +29,6 @@
     # "sysrq=1"        # Įgalina Magic SysRq
     "kernel.panic=10" # Perkrauna sistemą po 10 sekundžių kernel panic
     "loglevel=7" # Išsamūs logai (aukščiausias lygis)
-    "splash"
-    "quiet"
     "earlyprintk" # Ankstyvas spausdinimas į konsolę
     "kernel.panic_on_oops=1" # Perkrauna sistemą, jei įvyksta oops (branduolio klaida)
     "kernel.core_pattern=/var/crash/core.%e.%p" # Nustato crash dump failo išsaugojimo vietą
