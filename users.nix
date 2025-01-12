@@ -8,12 +8,12 @@
     description = "Vaidotak";
     extraGroups = [ "networkmanager" "wheel" "vaidotak" "users" ];
   };
-  systemd.user.services.syncthing = { # ČIA SVARBIAUSIAS PAKEITIMAS
+  systemd.user.services.syncthing = { 
     description = "Syncthing service";
-    wantedBy = [ "default.target" ]; # Paleidžiama vartotojo sesijos metu
-    partOf = [ "graphical-session.target" ]; # Priklauso grafinei sesijai
+    wantedBy = [ "default.target" ]; 
+    partOf = [ "graphical-session.target" ];
     serviceConfig = {
-      ExecStart = "${pkgs.syncthing}/bin/syncthing -no-browser -gui-address=127.0.0.1:8384"; # Nurodome pilną kelią iki syncthing
+      ExecStart = "${pkgs.syncthing}/bin/syncthing -no-browser -gui-address=127.0.0.1:8384"; 
       Restart = "on-failure";
       Type = "simple";
       User = "vaidotak";
