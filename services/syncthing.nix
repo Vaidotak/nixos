@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let
-  secrets = import ../secret.nix;
+  secrets = import /home/vaidotak/.config/syncthing/secret.nix;
 in {
   services = {
     syncthing = {
