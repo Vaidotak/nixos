@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-# Interneto naršyklės ir komunikacija
+    # Interneto naršyklės ir komunikacija
     chromium
     librewolf # Privatumo orientuota Firefox atšaka
     filezilla # FTP klientas
@@ -14,7 +14,7 @@
     telegram-desktop # Telegram klientas
     mosh # Mobilusis terminalas
 
-# Failų valdymas ir archyvavimas
+    # Failų valdymas ir archyvavimas
     krusader # Failų tvarkyklė (panaši į Total Commander)
     krename # Failų pervadinimo įrankis
     mc # Midnight Commander (konsolinė failų tvarkyklė)
@@ -25,8 +25,8 @@
     cryptsetup # Disko šifravimo įrankis
     samba # Failų bendrinimo protokolas
     samba4Full # Samba 4 pilnas paketas
-    
-# Programavimas ir teksto redagavimas
+
+    # Programavimas ir teksto redagavimas
     neovim # Teksto redaktorius (Vim atšaka)
     vim # Teksto redaktorius
     vscode # Kodo redaktorius
@@ -34,7 +34,7 @@
     nixfmt-rfc-style # Nix kodo formatavimas (RFC stilius)
     git # Versijų kontrolės sistema
 
-# Sistemos įrankiai ir stebėjimas
+    # Sistemos įrankiai ir stebėjimas
     atuin # Komandų istorijos sinchronizavimas
     bc # Skaičiuotuvas komandinėje eilutėje
     blesh # Shell pagerinimas
@@ -60,8 +60,8 @@
     gnumake # GNU Make įrankis
     cifs-utils # CIFS protokolo įrankiai
     libnotify # Pranešimų sistema
-  
-# KDE programos
+
+    # KDE programos
     kdePackages.kate # Teksto redaktorius
     kdePackages.kcron # Užduočių planuotojas
     kdePackages.kdenlive # Vaizdo įrašų redaktorius
@@ -71,23 +71,23 @@
     caffeine-ng # Ekrano išjungimo valdymas
     kdePackages.kdenetwork-filesharing # Failų bendrinimas
 
-# Multimedija
+    # Multimedija
     calibre # Elektroninių knygų tvarkyklė
     vlc # Vaizdo ir garso grotuvas
 
-# Darbalaukio aplinka ir personalizavimas
+    # Darbalaukio aplinka ir personalizavimas
     rofi # Programų paleidimo meniu
     dmenu # Dinaminis meniu
     xorg.xrandr # Ekrano konfigūravimas
     xorg.xsetroot # Fono paveikslėlio nustatymas
 
-# Kitos programos
+    # Kitos programos
     obsidian # Žinių valdymo programa
     python3 # Python programavimo kalba
     python3Packages.pygobject3 # Python GObject integracija
     starship # Shell prompt'as
     # rustdesk # Nuotolinio darbo programa
-];
+  ];
 
   nixpkgs.config.allowUnfree = true;
 
@@ -97,13 +97,40 @@
     pinentryPackage = pkgs.pinentry-curses;
   };
 
-  programs.browserpass.enable = true;
-
-  programs.firefox.enable = true;
-
-  environment.sessionVariables = {
-  PASSWORD_STORE_ENABLE_EXTENSIONS = "true";
-  PASSWORD_STORE_EXTENSIONS_DIR = "${pkgs.passExtensions.pass-import}/lib/password-store/extensions";
+  programs.firefox = {
+  enable = true;
+  policies = {
+    Extensions = {
+      Install = builtins.map (ext: "https://addons.mozilla.org/firefox/downloads/latest/${ext}/latest.xpi") [
+        "keepassxc-browser"
+        "darkreader"
+        "privacy-badger"
+        "libredirect"
+        "tree-style-tab"
+        "ublock-origin"
+        "https-everywhere"
+        "cookie-autodelete"
+        "https-only"
+        "absolute-enable-right-click"
+        "deepl-translate"
+        "clearcache"
+        "easyscreenshot"
+        "feedly-notifier"
+        "i-dont-care-about-cookies"
+        "gmail-notifier-restartless"
+        "web-clipper-obsidian"
+        "popupoff"
+        "single-file"
+        "styl-us"
+        "to-deepl"
+        "to-google-translate"
+        "emoji-sav"
+        "raindropio"
+        "read-aloud"
+        "orbit-summarizer"
+      ];
+    };
+  };
 };
 
   environment.variables = {
