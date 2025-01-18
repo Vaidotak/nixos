@@ -60,6 +60,7 @@
     gnumake # GNU Make įrankis
     cifs-utils # CIFS protokolo įrankiai
     libnotify # Pranešimų sistema
+    iw # Belaidžio tinklo įrankiai
 
     # KDE programos
     kdePackages.kate # Teksto redaktorius
@@ -128,6 +129,7 @@
         "raindropio" # Nuorodų tvarkymas. Leidžia išsaugoti ir tvarkyti nuorodas į interneto puslapius.
         "read-aloud" # Teksto skaitymas balsu. Leidžia klausytis interneto puslapių teksto.
         "orbit-summarizer" # Puslapių apibendrinimas. Automatiškai apibendrina interneto puslapių turinį.
+        "quick-currency-converter" # Valiutos keitimas. Leidžia greitai konvertuoti valiutas interneto puslapiuose.
       ];
     };
   };
