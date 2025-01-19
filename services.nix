@@ -70,11 +70,14 @@ in
     package = pkgs.espanso;
   };
 
+  #programs.udiskie.enable = true;
+  services.dbus.enable = true;
+
   systemd.timers."sync-klipper".enable = true;
-systemd.services."sync-klipper" = {
-  script = ''#!/bin/bash
+  systemd.services."sync-klipper" = {
+    script = ''#!/bin/bash
   rsync -av ~/.local/share/klipper/history2.lst /home/vaidotak/;'';
-};
+  };
 
 
   # services.flatpak.enable = true;
@@ -86,10 +89,10 @@ systemd.services."sync-klipper" = {
   #  virtualisation.docker.enable = true;
 
   #  NixOS SearXNG servisai
-   services.searx.enable = true;
-   services.searx.settings.server.secret_key = "slaptas_raktas";
-   services.searx.settings.server.port = 8080;
-   services.searx.settings.search.formats = [ "html" "json" "rss" ];
+  services.searx.enable = true;
+  services.searx.settings.server.secret_key = "slaptas_raktas";
+  services.searx.settings.server.port = 8080;
+  services.searx.settings.search.formats = [ "html" "json" "rss" ];
 
   #  services.openssh.enable = true;
 

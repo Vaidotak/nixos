@@ -2,10 +2,11 @@
 
 {
 
-  services = {
+services = {
     xserver = {
       enable = true;
       desktopManager.plasma5.enable = true;
+      windowManager.i3.enable = true;
       xkb = {
         layout = "lt";
         variant = "";
@@ -19,7 +20,7 @@
   # Configure console keymap
   console.keyMap = "lt.baltic";
 
-  services.displayManager.sddm.enable = false;
+  services.displayManager.sddm.enable = true;
 
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" "IBMPlexMono" ]; })
