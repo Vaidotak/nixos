@@ -11,7 +11,7 @@
     chromium
     librewolf # Privatumo orientuota Firefox atšaka
     filezilla # FTP klientas
-    ktorrent # BitTorrent klientas
+    # ktorrent # BitTorrent klientas
     protonvpn-cli_2 # VPN (komandinė eilutė)
     protonvpn-gui # VPN (grafinė sąsaja)
     searxng # Meta-paieškos sistema
@@ -79,6 +79,21 @@
     xfce.thunar # Failų tvarkyklė (Xfce)
     gvfs # GNOME virtualiosios failų sistemos
     polybar # Statuso juosta
+    pamixer # PulseAudio garso valdymas
+    noto-fonts-color-emoji # Spalvoti emoji šriftai
+    feh # Vaizdų peržiūros programa
+    arandr # Ekrano konfigūravimo įrankis
+    arc-theme # Tema
+    lxappearance # Išvaizdos nustatymai
+    libmtp # Media Transfer Protocol įrankiai
+    simple-mtpfs # Media Transfer Protocol įrankiai
+    android-file-transfer # Android failų perdavimo įrankis
+    qbittorrent # BitTorrent klientas
+    noto-fonts # Noto šriftai
+    noto-fonts-emoji # Noto emoji šriftai
+    noto-fonts-extra # Papildomi Noto šriftai
+    dwm # Dinaminis langų tvarkytojas
+    st # Suckless terminalas
 
     # KDE programos
     kdePackages.kate # Teksto redaktorius
