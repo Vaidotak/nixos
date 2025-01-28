@@ -38,6 +38,7 @@ services = {
     })
     font-awesome
     inter
+    twemoji-color-font
   ];
 
   fonts.fontconfig.defaultFonts = {

@@ -94,6 +94,7 @@
     noto-fonts-extra # Papildomi Noto šriftai
     dwm # Dinaminis langų tvarkytojas
     st # Suckless terminalas
+    direnv # Aplinkos kintamųjų valdymas
 
     # KDE programos
     kdePackages.kate # Teksto redaktorius
