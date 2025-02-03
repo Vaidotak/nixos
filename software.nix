@@ -122,6 +122,9 @@
     python3Packages.pygobject3 # Python GObject integracija
     starship # Shell prompt'as
     # rustdesk # Nuotolinio darbo programa
+    lsd # ls įrankio pagerinimas
+    zsh # Z shell
+    zsh-syntax-highlighting # Z shell sintaksės paryškinimas
   ];
 
   nixpkgs.config.allowUnfree = true;

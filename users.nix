@@ -7,7 +7,11 @@
     isNormalUser = true;
     description = "Vaidotak";
     extraGroups = [ "networkmanager" "wheel" "vaidotak" "users" ];
+    shell = pkgs.zsh;
   };
+  
+  programs.zsh.enable = true;
+
   systemd.user.services.syncthing = { 
     description = "Syncthing service";
     wantedBy = [ "default.target" ]; 

@@ -1,8 +1,14 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
   secrets = import /home/vaidotak/.config/syncthing/secret.nix;
-in {
+in
+{
   networking = {
     hostName = "nixos";
 
@@ -13,10 +19,14 @@ in {
       "8.8.4.4"
     ];
 
-    useNetworkd = true;  # Naudojame systemd tinklų valdymui.
-    useDHCP = false;     # DHCP konfigūruojamas rankiniu būdu.
+    useNetworkd = true; # Naudojame systemd tinklų valdymui.
+    useDHCP = false; # DHCP konfigūruojamas rankiniu būdu.
 
-    dhcpcd.extraConfig = "nohook resolv.conf";
+    dhcpcd.extraConfig = ''
+      nohook resolv.conf
+      interface wlo1
+      option domain_name_servers '1.1.1.1 1.0.0.1 8.8.8.8 8.8.4.4'
+    '';
   };
 
   systemd.network = {
@@ -26,7 +36,12 @@ in {
         matchConfig.Name = "en*";
         networkConfig = {
           DHCP = "ipv4";
-          DNS = [ "1.1.1.1" "1.0.0.1" "8.8.8.8" "8.8.4.4" ];
+          DNS = [
+            "1.1.1.1"
+            "1.0.0.1"
+            "8.8.8.8"
+            "8.8.4.4"
+          ];
         };
         dhcpV4Config.UseDNS = false;
       };
@@ -34,6 +49,7 @@ in {
         matchConfig.Name = "wl*";
         networkConfig = {
           DHCP = "ipv4";
+          DNS = [ "1.1.1.1" "1.0.0.1" "8.8.8.8" "8.8.4.4" ]; # Pridėta čia
         };
       };
     };
@@ -73,13 +89,35 @@ in {
         psk="${secrets.SSID2}"
         priority=50
       }
+
+      network={
+        ssid="Galaxy S23 ultra"
+        psk="${secrets.SSID3}"
+        priority=100
+      }
     '';
   };
 
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 443 21 22 465 993 995 22000 139 445 ];
-    allowedUDPPorts = [ 21027 3478 3479 3480 3481 ];
+    allowedTCPPorts = [
+      443
+      21
+      22
+      465
+      993
+      995
+      22000
+      139
+      445
+    ];
+    allowedUDPPorts = [
+      21027
+      3478
+      3479
+      3480
+      3481
+    ];
     package = pkgs.iptables;
   };
 }
