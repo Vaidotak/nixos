@@ -11,6 +11,7 @@
     ./updates.nix
     ./services.nix
     ./services/syncthing.nix
+    ./services/zsh.nix
   ];
 
   # Boot loader configuration
