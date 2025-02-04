@@ -101,7 +101,7 @@
 
     promptInit = ''
       autoload -U colors && colors
-      PS1="%{$fg_bold[green]%}%n@%m%{$reset_color%}:%{$fg_bold[cyan]%}%~%{$reset_color%}> "
+      PS1="%{$fg_bold[green]%}%n@%m%{$reset_color%}:%{$fg_bold[yellow]%}%~%{$reset_color%}> "
     '';
 
     syntaxHighlighting.enable = true;
