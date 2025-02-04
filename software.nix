@@ -125,6 +125,7 @@
     lsd # ls įrankio pagerinimas
     zsh # Z shell
     zsh-syntax-highlighting # Z shell sintaksės paryškinimas
+    zsh-autosuggestions # Z shell automatiniai pasiūlymai
     espanso # Teksto išplėtimas
     xorg.xmodmap # Būtina klaviatūros išdėstymui
     xorg.setxkbmap # Būtina klaviatūros išdėstymui
