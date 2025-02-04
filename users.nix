@@ -14,7 +14,7 @@
     enable = true;
     promptInit = ''
       autoload -U colors && colors
-      PS1="%{$fg[green]%}%n@%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}> "
+      PS1="%{$fg[greenyellow]%}%n@%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}> "
     '';
   };
 
