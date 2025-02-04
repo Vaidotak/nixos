@@ -79,15 +79,6 @@ in
   rsync -av ~/.local/share/klipper/history2.lst /home/vaidotak/;'';
   };
 
-
-  # services.flatpak.enable = true;
-
-  # Laikinai nereikalingi
-
-  #  services.syncthing.enable = true;
-  #  services.syncthing.user = "vaidotak";
-  #  virtualisation.docker.enable = true;
-
   #  NixOS SearXNG servisai
   services.searx.enable = true;
   services.searx.settings.server.secret_key = "slaptas_raktas";

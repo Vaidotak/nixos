@@ -125,6 +125,9 @@
     lsd # ls įrankio pagerinimas
     zsh # Z shell
     zsh-syntax-highlighting # Z shell sintaksės paryškinimas
+    espanso
+  xorg.xmodmap   # Būtina klaviatūros išdėstymui
+  xorg.setxkbmap # Būtina klaviatūros išdėstymui
   ];
 
   nixpkgs.config.allowUnfree = true;

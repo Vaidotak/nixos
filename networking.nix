@@ -49,7 +49,7 @@ in
         matchConfig.Name = "wl*";
         networkConfig = {
           DHCP = "ipv4";
-          DNS = [ "1.1.1.1" "1.0.0.1" "8.8.8.8" "8.8.4.4" ]; # Pridėta čia
+          DNS = [ "1.1.1.1" "1.0.0.1" "8.8.8.8" "8.8.4.4" ];
         };
       };
     };
