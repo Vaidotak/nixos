@@ -10,7 +10,13 @@
     shell = pkgs.zsh;
   };
   
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+    promptInit = ''
+      autoload -U colors && colors
+      PS1="%{$fg[green]%}%n@%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}> "
+    '';
+  };
 
   systemd.user.services.syncthing = { 
     description = "Syncthing service";
