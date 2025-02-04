@@ -36,7 +36,7 @@
           # Completion nustatymai
           zstyle ':completion:*' menu select
 
-          # Jūsų aliases
+          # aliases
           alias ll='ls -lh'
       alias n=fastfetch
       alias baterija='upower -i /org/freedesktop/UPower/devices/battery_BAT0'
