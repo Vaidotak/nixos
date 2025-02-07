@@ -129,7 +129,7 @@
     espanso # Teksto išplėtimas
     xorg.xmodmap # Būtina klaviatūros išdėstymui
     xorg.setxkbmap # Būtina klaviatūros išdėstymui
-    chezmoi # Dotfiles valdymas
+    # chezmoi # Dotfiles valdymas
   ];
 
   nixpkgs.config.allowUnfree = true;
