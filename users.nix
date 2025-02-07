@@ -8,6 +8,8 @@
     description = "Vaidotak";
     extraGroups = [ "networkmanager" "wheel" "vaidotak" "users" ];
     shell = pkgs.zsh;
+    ignoreShellProgramCheck = true;
+
   };
 
 
