@@ -21,17 +21,6 @@
     backupFileExtension = "backup";
   };
 
-  home-manager.users.vaidotak = { config, pkgs, options, ... }:
-  {
-    home.packages = with pkgs; [ 
-      librewolf
-    ];
-
-    programs.zsh.enable = true; 
-    home.stateVersion = "24.11";  
-
-
-  };
 
   # Boot loader configuration
   boot.loader = {
