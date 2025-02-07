@@ -130,6 +130,7 @@
     xorg.xmodmap # Būtina klaviatūros išdėstymui
     xorg.setxkbmap # Būtina klaviatūros išdėstymui
     # chezmoi # Dotfiles valdymas
+    home-manager # Namų direktorijos valdymas
   ];
 
   nixpkgs.config.allowUnfree = true;
