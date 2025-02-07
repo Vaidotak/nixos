@@ -50,7 +50,7 @@
       alias blame='systemd-analyze blame' # Ši komanda bando nustatyti, kas sulėtina sistemos paleidimą. Ji pateikia informaciją apie paslaugas, kurios uždelsia kitų paslaugų paleidimą
       alias plot='systemd-analyze plot >bootup.svg'
       alias orai='~/bin/orai.sh'
-      alias md='~/bin/md.sh
+      alias md='~/bin/md.sh'
       alias search='history | grep -i'
       alias ping='ping -c 5'
       alias progresas='~/bin/progresas.sh'
