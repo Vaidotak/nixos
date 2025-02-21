@@ -77,6 +77,7 @@
             alias dep='/home/vaidotak/bin/dep.sh'
             alias hm='home-manager switch'
             alias re='sudo nixos-rebuild switch'
+            alias cm='chezmoi apply && chezmoi cd && git add . && git commit -m "Atnaujinti dotfiles" && git push'
 
             # Promptas
             autoload -U colors && colors
