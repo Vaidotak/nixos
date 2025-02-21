@@ -1,0 +1,9 @@
+secret/secret.nix
+home-manager/modules/secret.nix
+modules/software.nix
+modules/secret/secret.nix
+home-manager/modules/token.nix
+secrets.nix
+secrets/github_token.yaml
+secrets/github_token.plain
+.sops.yaml
