@@ -67,6 +67,7 @@ in {
     nixfmt-classic # Nix formatavimo įrankis
     featherpad # Paprastas teksto redaktorius
     geany # Paprastas kodo redaktorius
+    chezmoi # Dotfiles valdymas
   ];
 
   home.stateVersion = "24.11";
