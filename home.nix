@@ -9,7 +9,7 @@ in {
     ./home-manager/modules/alacritty.nix
     ./home-manager/dotfiles.nix
     #./modules/keepassxc.nix
-    #./modules/syncthing.nix
+    #./home-manager/modules/syncthing.nix
   ];
 
   home.username = "vaidotak";
