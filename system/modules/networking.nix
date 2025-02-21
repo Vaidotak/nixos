@@ -16,8 +16,7 @@
     useNetworkd = false;
   };
 
-  # Teisingas NetworkManager įjungimas
-  networking.networkmanager.enable = true;  # Atkreipkite dėmesį į "networkmanager" vietoj "network-manager"
+  networking.networkmanager.enable = true;
 
   networking.firewall = {
     enable = true;

@@ -56,10 +56,9 @@
   i18n.defaultLocale = "lt_LT.UTF-8";
   environment.variables.LC_ALL = "lt_LT.UTF-8";
 
-  # Saugumo nustatymai
+
   security.rtkit.enable = true;
 
-  # Pašaliname flakes eksperimentines funkcijas – dabar nebenaudojame flakes
   nix.settings.experimental-features = [ "nix-command" ];
 
   system.stateVersion = "24.11";

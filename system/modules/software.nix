@@ -19,12 +19,8 @@
     cryptsetup # Disko šifravimo įrankis
     samba # Failų bendrinimo protokolas
     samba4Full # Samba 4 pilnas paketas
-    # Sistemos įrankiai ir stebėjimas
-    #atuin # Komandų istorijos sinchronizavimas
-    #blesh # Shell pagerinimas
     alsa-utils # ALSA garso įrankiai
     networkmanager # Tinklo valdymo programa
-    #xfce
     xfce.xfwm4
     xfce.xfce4-whiskermenu-plugin
     xfce.xfce4-pulseaudio-plugin
