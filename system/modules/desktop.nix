@@ -1,31 +1,35 @@
 { config, pkgs, ... }:
 
 {
-
-services = {
+  services = {
     xserver = {
       enable = true;
-      desktopManager.plasma5.enable = true;
-      # desktopManager.gnome.enable = true;
+      displayManager = {
+        lightdm.enable = true;
+        sessionCommands = ''
+        xrandr --output HDMI-1 --off
+      '';
+      };
       windowManager.i3.enable = false;
       windowManager.dwm.enable = false;
-      desktopManager.xfce.enable = true;
+      desktopManager = {
+        plasma5.enable = true;
+        xterm.enable = false;
+        xfce.enable = true;
+      };
+
       xkb = {
         layout = "lt";
         variant = "";
       };
-      displayManager.sessionCommands = ''
-        xrandr --output HDMI-1 --off
-      '';
+    };
+    displayManager = {
+      defaultSession = "xfce";
+      autoLogin = {
+        enable = false;
+        user = "vaidotak";
+      };
     };
   };
-
-  # Configure console keymap
   console.keyMap = "lt.baltic";
-
-  # services.displayManager.sddm.enable = true;
-  # services.xserver.displayManager.gdm.enable = true;
-  services.xserver.displayManager.lightdm.enable = true;
-  services.displayManager.defaultSession = "xfce";
-  
 }
