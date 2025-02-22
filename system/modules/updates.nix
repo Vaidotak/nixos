@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 {
-   # Automatinis sistemos atnaujinimas
+  # Automatinis sistemos atnaujinimas
   system.autoUpgrade = {
     enable = true;
     flags = [ "--upgrade" ];

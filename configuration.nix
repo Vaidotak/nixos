@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-{
+{ config, pkgs, ... }: {
   # Įtraukiame visus modulinius failus
   imports = [
     ./system/modules/hardware.nix
@@ -12,8 +11,6 @@
     ./system/modules/hardware-configuration.nix
     ./system/modules/syncthing.nix
   ];
-
-  nixpkgs.config.allowUnfree = true;
 
   # Boot loader konfigūracija
   boot.loader = {
@@ -29,19 +26,17 @@
 
   # Branduolio parametrų nustatymai
   boot.kernelParams = [
-    "kernel.panic=10"             # Perkrauna sistemą po 10 s kernel panic
-    "loglevel=7"                  # Išsamūs logai
-    "earlyprintk"                 # Ankstyvas spausdinimas į konsolę
-    "kernel.panic_on_oops=1"      # Perkrauna sistemą, jei įvyksta oops
-    "kernel.core_pattern=/var/crash/core.%e.%p"  # Crash dump failo kelias
+    "kernel.panic=10" # Perkrauna sistemą po 10 s kernel panic
+    "loglevel=7" # Išsamūs logai
+    "earlyprintk" # Ankstyvas spausdinimas į konsolę
+    "kernel.panic_on_oops=1" # Perkrauna sistemą, jei įvyksta oops
+    "kernel.core_pattern=/var/crash/core.%e.%p" # Crash dump failo kelias
     "acpi_osi=!"
-    "acpi_osi=\"Windows 2009\""
+    ''acpi_osi="Windows 2009"''
     "acpi=force"
   ];
 
-  boot.kernel.sysctl = {
-    "kernel.sysrq" = 1;
-  };
+  boot.kernel.sysctl = { "kernel.sysrq" = 1; };
 
   # Aparatinės įrangos konfigūracija
   hardware.bluetooth = {
@@ -55,7 +50,6 @@
   time.timeZone = "Europe/Vilnius";
   i18n.defaultLocale = "lt_LT.UTF-8";
   environment.variables.LC_ALL = "lt_LT.UTF-8";
-
 
   security.rtkit.enable = true;
 

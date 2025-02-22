@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  unstablePkgs,
-  ...
-}:
+{ config, pkgs, unstablePkgs, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -36,23 +31,19 @@
     udiskie
     kdialog
 
-    
-
-
     # Kitos programos
-    
+
     # rustdesk # Nuotolinio darbo programa
     # xorg.xrandr # Ekrano konfigūravimas
     # xorg.xsetroot # Fono paveikslėlio nustatymas
     # xorg.xmodmap # Būtina klaviatūros išdėstymui
     # xorg.setxkbmap # Būtina klaviatūros išdėstymui
     # chezmoi # Dotfiles valdymas
-    
+
   ];
 
   nixpkgs.config.allowUnfree = true;
   services.gnome.gnome-keyring.enable = true;
-
 
   programs.gnupg.agent = {
     enable = true;
@@ -60,7 +51,6 @@
     pinentryPackage = pkgs.pinentry-curses;
   };
 
-  
   environment.variables = {
     EDITOR = "nano";
     VISUAL = "imv";
