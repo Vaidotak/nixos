@@ -5,7 +5,13 @@
     xserver = {
       enable = true;
       displayManager = {
-        lightdm.enable = true;
+        lightdm = {
+          enable = true;
+          greeters.slick = {
+            enable = true;
+            theme.name = "Zukitwo-dark";
+          };
+        };
         sessionCommands = ''
         xrandr --output HDMI-1 --off
       '';

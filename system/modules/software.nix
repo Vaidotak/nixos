@@ -30,6 +30,8 @@
     udisks
     udiskie
     kdialog
+    zuki-themes
+
 
     # Kitos programos
 
