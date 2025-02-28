@@ -68,6 +68,10 @@ in {
     featherpad # Paprastas teksto redaktorius
     geany # Paprastas kodo redaktorius
     chezmoi # Dotfiles valdymas
+    brave # Brave naršyklė
+    xfce.xfce4-weather-plugin # XFCE orų prognozės
+    xfce.xfce4-sensors-plugin # XFCE jutiklių rodiklis
+    xfce.xfce4-notes-plugin # XFCE užrašų valdymas
   ];
 
   home.stateVersion = "24.11";

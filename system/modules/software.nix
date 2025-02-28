@@ -29,7 +29,7 @@
     gvfs
     udisks
     udiskie
-    kdialog
+    kdePackages.kdialog
     zuki-themes
 
 

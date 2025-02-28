@@ -19,7 +19,7 @@
       windowManager.i3.enable = false;
       windowManager.dwm.enable = false;
       desktopManager = {
-        plasma5.enable = true;
+        #plasma5.enable = true;
         xterm.enable = false;
         xfce.enable = true;
       };
@@ -36,6 +36,7 @@
         user = "vaidotak";
       };
     };
+    desktopManager.plasma6.enable = true;
   };
   console.keyMap = "lt.baltic";
 }
