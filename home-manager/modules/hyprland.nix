@@ -93,12 +93,14 @@
         "clipman"            # Iškarpinės valdymas
         "dunst"              # Pranešimų sistema
         "waybar"             # Statuso juosta
+        "hyprctl font 'Noto Sans Regular 10'"  # Nustatyti šriftą
       ];
 
       # Aplinkos kintamieji
       env = [
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"
+        "Xft.dpi,120"
       ];
 
       # Greitieji klavišai

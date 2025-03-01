@@ -51,10 +51,10 @@
   # ];
   fontconfig = {
     enable = true;
-    # defaultFonts = {
-    #   sansSerif = [ "Fira Sans" "TeX Gyre Adventor" ];
-    #   monospace = [ "Fira Code" ];
-    # };
+    defaultFonts = {
+      sansSerif = [ "Noto Sans Regular" ];
+      monospace = [ "Monospace Regular" ];
+    };
     hinting = {
       enable = true;
       style = "full";  # Pilnas glotninimas
