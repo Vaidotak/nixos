@@ -39,4 +39,27 @@
     desktopManager.plasma6.enable = true;
   };
   console.keyMap = "lt.baltic";
+  programs.hyprland.enable = true;
+  
+  fonts = {
+  enableDefaultPackages = true;
+  # fonts = with pkgs; [
+  #   tex-gyre-fonts  # TeX Gyre šriftai
+  #   fira-code        # Fira Sans ir kiti šriftai
+  #   font-awesome     # Ikonoms
+  #   nerdfonts       # Jeigu naudosite Nerd Fonts
+  # ];
+  fontconfig = {
+    enable = true;
+    # defaultFonts = {
+    #   sansSerif = [ "Fira Sans" "TeX Gyre Adventor" ];
+    #   monospace = [ "Fira Code" ];
+    # };
+    hinting = {
+      enable = true;
+      style = "full";  # Pilnas glotninimas
+    };
+    antialias = true;  # Įjungia anti-aliasing
+  };
+};
 }

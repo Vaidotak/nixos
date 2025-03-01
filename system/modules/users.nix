@@ -6,7 +6,7 @@
   users.users.vaidotak = {
     isNormalUser = true;
     description = "Vaidotak";
-    extraGroups = [ "networkmanager" "wheel" "vaidotak" "users" ];
+    extraGroups = [ "networkmanager" "wheel" "vaidotak" "users" "input" ];
     shell = pkgs.zsh;
     ignoreShellProgramCheck = true;
   };

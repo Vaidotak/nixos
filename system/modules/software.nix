@@ -31,6 +31,22 @@
     udiskie
     kdePackages.kdialog
     zuki-themes
+    # hyprland aplinka
+    hyprland # Hyprland aplinka
+    wl-clipboard # Wayland iškarpinės įrankis
+    kitty # Terminalas
+    pavucontrol # Garso valdymo grafinė sąsaja
+    clipman  # Iškarpinės valdymo programa
+    dunst # Pranešimų sistema
+    xdg-desktop-portal-hyprland # Hyprland integracija
+    xdg-desktop-portal # Portalas tarp programų ir darbalaukio
+    xdg-desktop-portal-gtk # GTK integracija
+    wireplumber # Pipewire valdymo programa
+    wofi           # Programų meniu
+    waybar         # Statuso juosta
+    brightnessctl  # Šviesumo valdymas
+    networkmanagerapplet # Tinklo valdymas
+
 
 
     # Kitos programos
