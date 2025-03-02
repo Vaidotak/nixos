@@ -10,7 +10,16 @@
     ./system/modules/desktop.nix
     ./system/modules/hardware-configuration.nix
     ./system/modules/syncthing.nix
+    <home-manager/nixos>
   ];
+
+home-manager = {
+    # useGlobalPkgs = true;    # Naudoti globalius paketus
+    useUserPackages = true;  # Įdiegti paketus į naudotojo profilį
+    users.vaidotak = import /home/vaidotak/nixos/home.nix;
+    # backupFileExtension = "backup-new";
+  };
+  
 
   # Boot loader konfigūracija
   boot.loader = {

@@ -46,14 +46,14 @@
     };
     
     # Teisingas kelias Plasma 6
-    desktopManager.plasma6.enable = true;
+    desktopManager.plasma6.enable = false;
   };
   
   # Konsolės nustatymai
   console.keyMap = "lt.baltic";
   
   # Kompozitoriai
-  programs.hyprland.enable = true;
+  programs.hyprland.enable = false;
   
   # Šriftų nustatymai
   fonts = {

@@ -10,6 +10,7 @@ in {
     ./home-manager/dotfiles.nix
     ./home-manager/modules/hyprland.nix
     ./home-manager/modules/waybar.nix
+    #./home-manager/modules/xfce-panel.nix
     #./home-manager/modules/shortcuts.nix
     #./modules/keepassxc.nix
     #./home-manager/modules/syncthing.nix
@@ -19,9 +20,9 @@ in {
   home.homeDirectory = "/home/vaidotak";
 
   nix.settings = secrets.nix.settings;
-
+  
   programs.home-manager.enable = true;
-  nix.package = pkgs.nix;
+  nix.package = pkgs.lib.mkForce pkgs.nix;
   home.enableNixpkgsReleaseCheck = false;
   nixpkgs.config.allowUnfree = true;
 
