@@ -79,57 +79,6 @@ in {
     
   ];
 
-  # wayland.windowManager.hyprland = {
-  #   enable = true;
-  #   package = pkgs.hyprland;
-  #   xwayland.enable = true;  # Leidžia paleisti X11 programas, pvz., xfce4-panel
-  #   systemd.enable = true;
-
-  #   settings = {
-  #     # Monitorių nustatymai
-  #     monitor = [
-  #       "eDP-1,1920x1080@60,0x0,1"
-  #       "HDMI-1,disable"
-  #     ];
-
-  #     # Įvesties nustatymai
-  #     input = {
-  #       kb_layout = "lt";
-  #       follow_mouse = 1;  # Pelė seka fokusą
-  #     };
-
-  #     # Bendrieji nustatymai
-  #     general = {
-  #       gaps_in = 5;
-  #       gaps_out = 10;
-  #       border_size = 2;
-  #     };
-
-  #     # Greitieji klavišai
-  #     "$mod" = "SUPER";  # Pagrindinis modifikatorius (Windows klavišas)
-  #     bind = [
-  #       "$mod, Q, exit"                # Išeiti iš Hyprland
-  #       "$mod, T, exec, xfce4-terminal" # Atidaryti terminalą
-  #       "$mod, W, killactive"          # Uždaryti aktyvų langą
-  #       "$mod, F, togglefloating"      # Perjungti langą į plūduriuojantį režimą
-  #       "$mod, LEFT, movefocus, l"     # Perkelti fokusą į kairę
-  #       "$mod, RIGHT, movefocus, r"    # Perkelti fokusą į dešinę
-  #       "$mod, UP, movefocus, u"       # Perkelti fokusą aukštyn
-  #       "$mod, DOWN, movefocus, d"     # Perkelti fokusą žemyn
-  #     ];
-
-  #     # Paleidžiamos programos
-  #     exec-once = [
-  #       "nm-applet"          # Tinklo valdymas
-  #       "pavucontrol"        # Garso valdymas
-  #       "blueman-applet"     # Bluetooth valdymas
-  #       "clipman"            # Iškarpinės valdymas
-  #       "dunst"              # Pranešimų sistema
-  #       "waybar"             # Lengva Wayland juosta (vietoj xfce4-panel)
-  #     ];
-  #   };
-  # };
-
-
+  
   home.stateVersion = "24.11";
 }
