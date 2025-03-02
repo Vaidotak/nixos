@@ -10,6 +10,7 @@ in {
     ./home-manager/dotfiles.nix
     ./home-manager/modules/hyprland.nix
     ./home-manager/modules/waybar.nix
+    #./home-manager/modules/shortcuts.nix
     #./modules/keepassxc.nix
     #./home-manager/modules/syncthing.nix
   ];
