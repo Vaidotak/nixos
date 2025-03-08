@@ -10,6 +10,7 @@ in {
     ./home-manager/dotfiles.nix
     ./home-manager/modules/hyprland.nix
     ./home-manager/modules/waybar.nix
+    ./home-manager/modules/config-files-backup.nix
     #./home-manager/modules/librewolf.nix
     #./home-manager/modules/xfce-panel.nix
     #./home-manager/modules/shortcuts.nix
