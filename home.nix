@@ -10,6 +10,7 @@ in {
     ./home-manager/dotfiles.nix
     ./home-manager/modules/hyprland.nix
     ./home-manager/modules/waybar.nix
+    #./home-manager/modules/librewolf.nix
     #./home-manager/modules/xfce-panel.nix
     #./home-manager/modules/shortcuts.nix
     #./modules/keepassxc.nix
@@ -76,6 +77,7 @@ in {
     xfce.xfce4-weather-plugin # XFCE orų prognozės
     xfce.xfce4-sensors-plugin # XFCE jutiklių rodiklis
     xfce.xfce4-notes-plugin # XFCE užrašų valdymas
+    feh # Paprastas paveikslėlių peržiūros įrankis
 
     
   ];
