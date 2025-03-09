@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
-let secrets = import /home/vaidotak/bin/secret.nix;
+let
+  secrets = import /home/vaidotak/bin/secret.nix;
+  homeDir = "/home/vaidotak";
 
 in {
   services.syncthing = {
@@ -16,24 +18,25 @@ in {
       devices = { "samsungS22" = { id = secrets.syncthingDeviceID; }; };
       folders = {
         "obsidian" = {
-          path = "/home/vaidotak/Obsidian";
+          path = "${homeDir}/Obsidian";
           devices = [ "samsungS22" ];
         };
         "gpg_backup" = {
-          path = "/home/vaidotak/.backup";
+          path = "${homeDir}/.backup";
           devices = [ "samsungS22" ];
           ignorePerms = false;
         };
         "bin" = {
-          path = "/home/vaidotak/bin";
+          path = "${homeDir}/bin";
           devices = [ "samsungS22" ];
         };
         "nixos" = {
-          path = "/home/vaidotak/nixos";
+          path = "${homeDir}/nixos";
           devices = [ "samsungS22" ];
+          type = "sendonly";
         };
         # "config" = {
-        #   path = "/home/vaidotak/.config";
+        #   path = "${homeDir}/.config";
         #   devices = [ "samsungS22" ];
         # };
       };
