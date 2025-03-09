@@ -32,10 +32,10 @@ in {
           path = "/home/vaidotak/nixos";
           devices = [ "samsungS22" ];
         };
-        "config" = {
-          path = "/home/vaidotak/.config";
-          devices = [ "samsungS22" ];
-        };
+        # "config" = {
+        #   path = "/home/vaidotak/.config";
+        #   devices = [ "samsungS22" ];
+        # };
       };
     };
   };

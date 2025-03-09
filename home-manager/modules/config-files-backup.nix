@@ -64,33 +64,36 @@ let
     }
 
     sync_to_github() {
-        cd "$GIT_BACKUP_DIR" || {
-            print_error "Nepavyko pakeisti katalogo į $GIT_BACKUP_DIR"
-            exit 1
-        }
-
-        if [ ! -d ".git" ]; then
-            git init
-            git remote add origin "git@github.com:Vaidotak/config-backup.git"
-            print_success "Inicializuota Git repozitorija"
-        fi
-
-        git add .
-        git commit -m "Backup at $TIMESTAMP"
-        if [ $? -eq 0 ]; then
-            print_success "Sukurtas komitas: Backup at $TIMESTAMP"
-        else
-            print_error "Nepavyko sukurti komito"
-            exit 1
-        fi
-
-        git push origin main
-        if [ $? -eq 0 ]; then
-            print_success "Sėkmingai nusiųsta į GitHub"
-        else
-            print_error "Nepavyko nusiųsti į GitHub"
-        fi
+    export PATH="$HOME/.nix-profile/bin:/run/current-system/sw/bin:$PATH"
+    cd "$GIT_BACKUP_DIR" || {
+        echo "Nepavyko pakeisti katalogo į $GIT_BACKUP_DIR"
+        exit 1
     }
+
+    if [ ! -d ".git" ]; then
+        git init
+        git remote add origin "git@github.com:Vaidotak/config-backup.git"
+        echo "Inicializuota Git repozitorija"
+    fi
+
+    git add .
+    git commit -m "Backup at $TIMESTAMP"
+    if [ $? -eq 0 ]; then
+        echo "Sukurtas komitas: Backup at $TIMESTAMP"
+    else
+        echo "Klaida: Nepavyko sukurti komito"
+        exit 1
+    fi
+
+    #export GIT_SSH_COMMAND="/etc/profiles/per-user/vaidotak/bin/ssh"
+    git push origin main
+    if [ $? -eq 0 ]; then
+        echo "Sėkmingai nusiųsta į GitHub"
+    else
+        echo "Klaida: Nepavyko nusiųsti į GitHub"
+        exit 1
+    fi
+}
 
     copy_configs
     sync_to_github

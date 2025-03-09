@@ -46,6 +46,8 @@
     waybar         # Statuso juosta
     brightnessctl  # Šviesumo valdymas
     networkmanagerapplet # Tinklo valdymas
+    git            # Versijų kontrolės sistema
+    openssh          # Saugus prisijungimas
 
 
 
