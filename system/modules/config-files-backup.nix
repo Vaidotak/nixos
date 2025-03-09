@@ -3,7 +3,7 @@
 let
   failuKopijosScript = pkgs.writeScriptBin "failu_kopijos.sh" ''
     #!/usr/bin/env bash
-    export PATH=$HOME/.nix-profile/bin:$PATH
+    # export PATH=$HOME/.nix-profile/bin:$PATH
     # Description: Kopijuoja konfigūracinius failus į Git katalogą ir sinchronizuoja su GitHub
 
     GIT_BACKUP_DIR="$HOME/.config-backup"
@@ -64,7 +64,7 @@ let
     }
 
     sync_to_github() {
-    export PATH="$HOME/.nix-profile/bin:/run/current-system/sw/bin:$PATH"
+    # export PATH="$HOME/.nix-profile/bin:/run/current-system/sw/bin:$PATH"
     cd "$GIT_BACKUP_DIR" || {
         echo "Nepavyko pakeisti katalogo į $GIT_BACKUP_DIR"
         exit 1
@@ -100,7 +100,7 @@ let
   '';
 in
 {
-  home.packages = with pkgs; [ git openssh failuKopijosScript ];
+  environment.systemPackages = with pkgs; [ git openssh failuKopijosScript ];
 
   # Aktyvavimo skriptas
   home.activation.backupScript = config.lib.dag.entryAfter ["writeBoundary"] ''

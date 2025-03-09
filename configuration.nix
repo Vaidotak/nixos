@@ -10,6 +10,7 @@
     ./system/modules/desktop.nix
     ./system/modules/hardware-configuration.nix
     ./system/modules/syncthing.nix
+    ./system/modules/backup.nix
     <home-manager/nixos>
   ];
 
