@@ -92,7 +92,6 @@
                               alias SWAP='cat /proc/swaps'
                               alias DF='(df -h | grep -E "/dev/nvme0n1p2|/dev/mmcblk0p1") && free -h | grep Swap'
                               alias zamba='/home/vaidotak/bin/samba.sh'
-                              alias dep='/home/vaidotak/bin/dep.sh'
                               alias hm='home-manager switch'
                               alias re='sudo nixos-rebuild switch'
 

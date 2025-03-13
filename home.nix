@@ -28,23 +28,6 @@ in {
   home.enableNixpkgsReleaseCheck = false;
   nixpkgs.config.allowUnfree = true;
 
-  # systemd.user.services.failu_kopijos = {
-  #   Description = "Failų kopijos skripto paleidimas";  # Tiesioginė klaidos vieta
-  #   Service = {
-  #     ExecStart = "/home/vaidotak/nixos/sh/failu_kopijos.sh";
-  #     Type = "oneshot";
-  #   };
-  #   Install.WantedBy = [ "default.target" ];
-  # };
-
-  # systemd.user.timers.failu_kopijos = {
-  #   Description = "Paleisti failu_kopijos.sh kas valandą";
-  #   Timer = {
-  #     OnCalendar = "hourly";
-  #     Persistent = true;
-  #   };
-  #   Install.WantedBy = [ "timers.target" ];
-  # };
 
   home.packages = with pkgs; [
     zsh # Z shell
@@ -97,6 +80,9 @@ in {
     xfce.xfce4-sensors-plugin # XFCE jutiklių rodiklis
     xfce.xfce4-notes-plugin # XFCE užrašų valdymas
     feh # Paprastas paveikslėlių peržiūros įrankis
+    rofi # Programų paleidimo įrankis
+    kdePackages.breeze # Breeze temos
+    kdePackages.breeze-icons # Breeze ikonos
 
     
   ];
