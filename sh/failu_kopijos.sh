@@ -32,6 +32,7 @@ CONFIG_SOURCES=(
     "$HOME/.config/geany/"
     "$HOME/myenv/generuoti_grafikus.py"
     "$HOME/.config/systemd/user/"
+    "$HOME/nixos/sh/"
 )
 
 # Funkcija klaidų pranešimams

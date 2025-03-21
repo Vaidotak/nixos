@@ -80,6 +80,18 @@ in
   services.searx.settings.server.port = 8080;
   services.searx.settings.search.formats = [ "html" "json" "rss" ];
 
+  systemd.services.kortele = {
+    description = "Mount kortele";
+    after = [ "multi-user.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      RemainAfterExit = true;
+      ExecStart = "/run/current-system/sw/bin/bash -c 'sleep 30 && mkdir -p /run/media/vaidotak/kortele/ && /run/wrappers/bin/mount /dev/mmcblk0p1 /run/media/vaidotak/kortele/'";
+      ExecStop = "/run/wrappers/bin/unmount /run/media/vaidotak/kortele/";
+    };
+    wantedBy = [ "multi-user.target" ];
+  };
+  
   #  services.openssh.enable = true;
 
   # services.prometheus = {

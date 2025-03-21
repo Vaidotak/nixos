@@ -83,6 +83,7 @@ in {
     rofi # Programų paleidimo įrankis
     kdePackages.breeze # Breeze temos
     kdePackages.breeze-icons # Breeze ikonos
+    xarchiver 
 
     
   ];
