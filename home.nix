@@ -81,9 +81,10 @@ in {
     xfce.xfce4-notes-plugin # XFCE užrašų valdymas
     feh # Paprastas paveikslėlių peržiūros įrankis
     rofi # Programų paleidimo įrankis
-    kdePackages.breeze # Breeze temos
-    kdePackages.breeze-icons # Breeze ikonos
+    kdePackages.breeze # Breeze temos reikalingos  Krusader programai
+    kdePackages.breeze-icons # Breeze ikonos reikalingos  Krusader programai
     xarchiver 
+    libnotify # reikalingas samba.sh skriptui
 
     
   ];
