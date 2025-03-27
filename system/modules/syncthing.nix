@@ -15,25 +15,38 @@ in {
     overrideFolders = true;
     settings = {
       gui = { address = "127.0.0.1:8384"; };
-      devices = { "samsungS22" = { id = secrets.syncthingDeviceID; }; };
+      devices = { "samsungS24" = { id = secrets.syncthingDeviceID; }; };
       folders = {
         "obsidian" = {
           path = "${homeDir}/Obsidian";
-          devices = [ "samsungS22" ];
+          devices = [ "samsungS24" ];
         };
         "gpg_backup" = {
           path = "${homeDir}/.backup";
-          devices = [ "samsungS22" ];
+          devices = [ "samsungS24" ];
           ignorePerms = false;
         };
         "bin" = {
           path = "${homeDir}/bin";
-          devices = [ "samsungS22" ];
+          devices = [ "samsungS24" ];
         };
-        "nixos" = {
-          path = "${homeDir}/nixos";
-          devices = [ "samsungS22" ];
+        # "nixos" = {
+        #   path = "${homeDir}/nixos";
+        #   devices = [ "samsungS24" ];
+        #   type = "sendonly";
+        # };
+        "audiobooks" = {
+          path = "${homeDir}/syncthing/audiobooks";
+          devices = [ "samsungS24" ];
           type = "sendonly";
+        };
+        "other" = {
+          path = "${homeDir}/syncthing/other";
+          devices = [ "samsungS24" ];
+        };
+        "video" = {
+          path = "${homeDir}/syncthing/video";
+          devices = [ "samsungS24" ];
         };
         # "config" = {
         #   path = "${homeDir}/.config";

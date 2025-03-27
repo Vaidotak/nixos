@@ -48,6 +48,8 @@
     networkmanagerapplet # Tinklo valdymas
     git            # Versijų kontrolės sistema
     openssh          # Saugus prisijungimas
+    libsForQt5.breeze-icons
+    kdePackages.breeze
 
 
 
