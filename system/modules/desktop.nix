@@ -36,7 +36,6 @@
       };
     };
     
-    # Teisingi keliai šioms opcijoms
     displayManager = {
       defaultSession = "xfce";
       autoLogin = {
@@ -45,7 +44,6 @@
       };
     };
     
-    # Teisingas kelias Plasma 6
     desktopManager.plasma6.enable = false;
   };
   

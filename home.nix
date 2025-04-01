@@ -6,6 +6,7 @@ in {
   imports = [
     ./home-manager/modules/zsh-config.nix
     ./home-manager/modules/firefox.nix
+    ./home-manager/modules/brave.nix
     ./home-manager/modules/alacritty.nix
     ./home-manager/dotfiles.nix
     ./home-manager/modules/hyprland.nix
