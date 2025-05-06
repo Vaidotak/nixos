@@ -65,10 +65,13 @@ in
     };
   };
 
-  services.espanso = {
-    enable = true;
-    package = pkgs.espanso;
-  };
+  # services.espanso = {
+  #   enable = true;
+  #   package = pkgs.espanso;
+  # };
+
+
+
 
   #programs.udiskie.enable = true;
   services.dbus.enable = true;

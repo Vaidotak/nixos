@@ -28,6 +28,11 @@ in {
   nix.package = pkgs.lib.mkForce pkgs.nix;
   home.enableNixpkgsReleaseCheck = false;
   nixpkgs.config.allowUnfree = true;
+  
+  services.espanso = {
+    enable = true;
+    package = pkgs.espanso;
+  };
 
 
   home.packages = with pkgs; [
@@ -42,11 +47,11 @@ in {
     qbittorrent # BitTorrent klientas
     obsidian # Žinių valdymo programa
     lsd # Pagerintas ls įrankis
-    espanso # Teksto išplėtimas
+    # espanso # Teksto išplėtimas
     calibre # Elektroninių knygų tvarkyklė
     vlc # Vaizdo ir garso grotuvas
     kdePackages.kleopatra # Sertifikatų valdymas ir kriptografija
-    protonvpn-gui # VPN (grafinė sąsaja)
+    # protonvpn-gui # VPN (grafinė sąsaja)
     telegram-desktop # Telegram klientas
     krusader # Failų tvarkyklė (Total Commander tipo)
     mc # Midnight Commander
@@ -80,12 +85,15 @@ in {
     xfce.xfce4-weather-plugin # XFCE orų prognozės
     xfce.xfce4-sensors-plugin # XFCE jutiklių rodiklis
     xfce.xfce4-notes-plugin # XFCE užrašų valdymas
+    xfce.xfce4-clipman-plugin # XFCE iškarpinės valdymas
     feh # Paprastas paveikslėlių peržiūros įrankis
     rofi # Programų paleidimo įrankis
     kdePackages.breeze # Breeze temos reikalingos  Krusader programai
     kdePackages.breeze-icons # Breeze ikonos reikalingos  Krusader programai
     xarchiver 
     libnotify # reikalingas samba.sh skriptui
+    clipnotify
+    xdg-ninja 
 
     
   ];

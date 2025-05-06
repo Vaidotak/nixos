@@ -52,6 +52,16 @@
     kdePackages.breeze # Breeze ikonos
     shutter # Ekrano nuotraukų programa
     qalculate-qt # Skaičiuotuvas
+    
+    # LXQt # LXQt darbalaukio aplinka
+    # pkgs.lxqt.lxqt-session
+    # lxqt.lxqt-wayland-session
+    # pkgs.lxqt.pcmanfm-qt
+    # pkgs.lxqt.qterminal
+    # pkgs.lxqt.lxqt-panel
+    # pkgs.lxqt.lxqt-config
+    # xwayland
+    # lightdm-gtk-greeter
 
     # Kitos programos
 
@@ -63,6 +73,17 @@
     # chezmoi # Dotfiles valdymas
 
   ];
+
+  # programs.sway.enable = true;
+
+
+  # environment.etc."lightdm/sessions/lxqt-wayland.desktop".text = ''
+  #   [Desktop Entry]
+  #   Name=LXQt Wayland
+  #   Comment=LXQt Session running on Wayland
+  #   Exec=/etc/profiles/per-user/vaidotak/bin/startlxqt
+  #   Type=Application
+  # '';
 
   nixpkgs.config.allowUnfree = true;
   services.gnome.gnome-keyring.enable = true;

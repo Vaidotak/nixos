@@ -38,7 +38,6 @@ in {
         "audiobooks" = {
           path = "${homeDir}/syncthing/audiobooks";
           devices = [ "samsungS24" ];
-          type = "sendonly";
         };
         "other" = {
           path = "${homeDir}/syncthing/other";

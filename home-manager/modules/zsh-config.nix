@@ -7,7 +7,7 @@
     autosuggestion.enable = true;
     #
 
-    initExtra = ''
+    initContent = ''
 
                               # Aplinkos kintamieji
                               export EDITOR=code
