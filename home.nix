@@ -85,7 +85,7 @@ in {
     xfce.xfce4-weather-plugin # XFCE orų prognozės
     xfce.xfce4-sensors-plugin # XFCE jutiklių rodiklis
     xfce.xfce4-notes-plugin # XFCE užrašų valdymas
-    xfce.xfce4-clipman-plugin # XFCE iškarpinės valdymas
+    copyq # Iškarpinės tvarkyklė
     feh # Paprastas paveikslėlių peržiūros įrankis
     rofi # Programų paleidimo įrankis
     kdePackages.breeze # Breeze temos reikalingos  Krusader programai
@@ -94,6 +94,7 @@ in {
     libnotify # reikalingas samba.sh skriptui
     clipnotify
     xdg-ninja 
+    htop # Procesų stebėjimo įrankis
 
     
   ];

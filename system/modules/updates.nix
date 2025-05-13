@@ -30,14 +30,14 @@
   };
 
   # Sistemos atnaujinimo tvarkaraštis
-  systemd.timers."nixos-upgrade" = {
-    wantedBy = [ "timers.target" ];
-    timerConfig = {
-      OnBootSec = "10min";
-      OnUnitActiveSec = "1d";
-      Unit = "nixos-upgrade.service";
-    };
-  };
+  # systemd.timers."nixos-upgrade" = {
+  #   wantedBy = [ "timers.target" ];
+  #   timerConfig = {
+  #     OnBootSec = "10min";
+  #     OnUnitActiveSec = "1d";
+  #     Unit = "nixos-upgrade.service";
+  #   };
+  # };
   # reikalingos komandos
   # systemctl status nixos-upgrade.service
   # systemctl start nixos-upgrade.service
